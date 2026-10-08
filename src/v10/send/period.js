@@ -9,7 +9,7 @@ import { variableTemplate } from "./templates.js";
  * 4. Returns the raw XML response text.
  */
 const startFunc = async ({ inTdlMessage, inCompany, inFromDate, inToDate }) => {
-    const localTdlMessage = inTdlMessage;
+    const localTdlMessage = inTdlMessage?.replaceAll("$$$$", "$$");
     const localCompany = inCompany;
     const localFromDate = inFromDate;
     const localToDate = inToDate;
@@ -22,7 +22,11 @@ const startFunc = async ({ inTdlMessage, inCompany, inFromDate, inToDate }) => {
         const fromDateTag = `<SVFROMDATE TYPE="Date">${localFromDate}</SVFROMDATE>`;
         const toDateTag = `<SVTODATE TYPE="Date">${localToDate}</SVTODATE>`;
         localXml = localXml.replace("{{STATICVARIABLES}}", companyTag + fromDateTag + toDateTag);
-    };
+    } else {
+        const fromDateTag = `<SVFROMDATE TYPE="Date">${localFromDate}</SVFROMDATE>`;
+        const toDateTag = `<SVTODATE TYPE="Date">${localToDate}</SVTODATE>`;
+        localXml = localXml.replace("{{STATICVARIABLES}}", fromDateTag + toDateTag);
+    }
 
     const response = await fetch(localUrl, {
         method: "POST",

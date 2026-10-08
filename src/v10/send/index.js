@@ -18,6 +18,8 @@ const startFunc = async ({ inTdlMessage, inCompany }) => {
     if (localCompany) {
         const companyTag = `<SVCURRENTCOMPANY>${localCompany}</SVCURRENTCOMPANY>`;
         localXml = localXml.replace("{{STATICVARIABLES}}", companyTag);
+    } else {
+        localXml = localXml.replace("{{STATICVARIABLES}}", "");
     }
 
     const response = await fetch(localUrl, {
