@@ -1,32 +1,33 @@
 {
-  "name": "@keshavsoft/tallyextract",
-  "version": "1.11.3",
+  "name": "tally-extract",
+  "version": "1.5.1",
+  "description": "Tally XML client based on structure spec",
   "type": "module",
-  "main": "index.js",
-  "types": "index.d.ts",
-  "sideEffects": false,
+  "main": "./src/index.js",
+  "types": "./src/index.d.ts",
   "exports": {
-    ".": "./index.js",
-    "./v1": "./src/v1/index.js"
+    ".": {
+      "types": "./src/index.d.ts",
+      "import": "./src/index.js",
+      "default": "./src/index.js"
+    },
+    "./package.json": "./package.json"
   },
   "files": [
     "src",
-    "index.js",
-    "index.d.ts",
-    "README.md",
-    "LICENSE"
+    "dispatchTally"
   ],
-  "homepage": "https://keshavsoft.com",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/keshavsoft/tallyExtract"
+  "publishConfig": {
+    "access": "public"
   },
-  "bugs": {
-    "url": "https://github.com/keshavsoft/tallyExtract/issues"
+  "scripts": {
+    "test": "node test/v1/company.js && node test/v1/units.js && node test/v1/withBatches.js",
+    "generate:dts": "create-intellisense"
+  },
+  "devDependencies": {
+    "create-intellisense": "^1.2.3"
   },
   "dependencies": {
-    "fast-xml-parser": "^5.11.1",
-    "stream-chain": "^4.2.5",
-    "stream-json": "^3.6.0"
+    "fast-xml-parser": "^5.11.2"
   }
 }
