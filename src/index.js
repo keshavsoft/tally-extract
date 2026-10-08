@@ -1,1 +1,1 @@
-export { default, call, getJson, asJson } from "./v6/index.js";
+export { default, xml, json } from "./v7/index.js";
