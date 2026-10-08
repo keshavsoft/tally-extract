@@ -1,6 +1,6 @@
 {
   "name": "tally-extract",
-  "version": "1.5.1",
+  "version": "1.5.2",
   "description": "Tally XML client based on structure spec",
   "type": "module",
   "main": "./src/index.js",
@@ -15,8 +15,27 @@
   },
   "files": [
     "src",
-    "dispatchTally"
+    "dispatchTally",
+    "README.md",
+    "LICENSE"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/keshavsoft/tally-extract.git"
+  },
+  "homepage": "https://github.com/keshavsoft/tally-extract#readme",
+  "bugs": {
+    "url": "https://github.com/keshavsoft/tally-extract/issues"
+  },
+  "keywords": [
+    "tally",
+    "tally-prime",
+    "tdl",
+    "xml",
+    "extract",
+    "accounting"
+  ],
+  "license": "MIT",
   "publishConfig": {
     "access": "public"
   },
