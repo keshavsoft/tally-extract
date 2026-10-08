@@ -1,5 +1,6 @@
 import tallySpec from "tally-spec";
 import send from "./send/index.js";
+import sendPeriod from "./send/period.js";
 
 /**
  * Story: Clean Tally XML Client (v9)
@@ -25,5 +26,25 @@ const companyFilter = async (inPath, inCompany) => {
     });
 };
 
+const companyAndPeriodFilter = async (inPath, inCompany, inFromDate, inToDate) => {
+    const localPath = inPath;
+    const localCompany = inCompany;
+    const localFromDate = inFromDate;
+    const localToDate = inToDate;
+
+    const endpoint = localPath.split(".").reduce((acc, key) => acc?.[key], tallySpec.source);
+
+    if (!endpoint?.tdl) {
+        throw new Error(`Master endpoint not found in structure: ${localPath}`);
+    }
+
+    return await sendPeriod({
+        inTdlMessage: endpoint.tdl,
+        inCompany: localCompany,
+        inFromDate: localFromDate,
+        inToDate: localToDate
+    });
+};
+
 export default companyFilter;
-export { companyFilter };
+export { companyFilter, companyAndPeriodFilter };
