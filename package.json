@@ -1,6 +1,6 @@
 {
   "name": "tally-extract",
-  "version": "1.11.1",
+  "version": "1.11.2",
   "description": "Tally XML client based on structure spec",
   "type": "module",
   "main": "./src/index.js",
@@ -40,7 +40,7 @@
     "access": "public"
   },
   "scripts": {
-    "test": "node test/v7/company.js && node test/v7/masters.js",
+    "test": "node test/v11/runAll.js",
     "generate:dts": "create-intellisense"
   },
   "devDependencies": {
