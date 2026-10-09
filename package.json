@@ -1,6 +1,6 @@
 {
   "name": "tally-extract",
-  "version": "1.10.4",
+  "version": "1.11.1",
   "description": "Tally XML client based on structure spec",
   "type": "module",
   "main": "./src/index.js",
