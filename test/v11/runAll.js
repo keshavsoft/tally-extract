@@ -10,7 +10,8 @@ const tests = [
     "node test/v11/period/sales.js",
     "node test/v11/period/purchases.js",
     "node test/v11/reports/stockSummary.js",
-    "node test/v11/reports/stockSummaryToJson.js"
+    "node test/v11/reports/flat/stockSummaryToJson.js",
+    "node test/v11/reports/nested/stockSummaryToJson.js"
 ];
 
 console.log("=== Running all v11 tests sequentially ===");
