@@ -1,5 +1,3 @@
-import { reportTemplate } from "./templates/reports/stockSummary.js";
-
 const companyTemplate = `<ENVELOPE>
     <HEADER>
         <VERSION>1</VERSION>
@@ -89,4 +87,4 @@ const K2 = `<ENVELOPE>
     </BODY>
 </ENVELOPE>`;
 
-export { companyTemplate, variableTemplate, K2, reportTemplate };
+export { companyTemplate, variableTemplate, K2 };

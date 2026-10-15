@@ -1,7 +1,7 @@
 import tallySpec from "tally-spec";
 import send from "./send/index.js";
 import sendPeriod from "./send/period.js";
-import reports from "./send/reports.js";
+import reports from "./byId/index.js";
 
 /**
  * Story: Clean Tally XML Client (v12)

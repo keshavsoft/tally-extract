@@ -1,4 +1,4 @@
-import transport from "./transport.js";
+import transport from "../transport.js";
 import { variableTemplate } from "./templates.js";
 
 /**
