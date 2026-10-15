@@ -48,6 +48,6 @@
     "create-intellisense": "^1.2.3"
   },
   "dependencies": {
-    "tally-spec": "^1.2.4"
+    "tally-spec": "^1.5.1"
   }
 }
