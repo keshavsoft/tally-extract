@@ -1,0 +1,79 @@
+POST http://localhost:9000
+Content-Type: text/xml
+
+<ENVELOPE>
+  <HEADER>
+    <VERSION>1</VERSION>
+    <TALLYREQUEST>Export</TALLYREQUEST>
+    <TYPE>Data</TYPE>
+    <ID>KSBatchBalancesReport</ID>
+  </HEADER>
+  <BODY>
+    <DESC>
+      <STATICVARIABLES>
+        <SVEXPORTFORMAT>$$SysName:JsonEx</SVEXPORTFORMAT>
+        <SVCURRENTCOMPANY>mani9</SVCURRENTCOMPANY>
+      </STATICVARIABLES>
+      <TDL>
+        <TDLMESSAGE>
+          <COLLECTION NAME="KSReportStockItems">
+            <TYPE>StockItem</TYPE>
+            <FETCH>Name</FETCH>
+          </COLLECTION>
+
+          <COLLECTION NAME="KSReportBatches">
+            <TYPE>Batch</TYPE>
+            <CHILDOF>$$LoopCollObj:$Name</CHILDOF>
+            <FETCH>Name</FETCH>
+            <FETCH>Parent</FETCH>
+            <FETCH>ClosingBalance</FETCH>
+            <FETCH>ClosingValue</FETCH>
+          </COLLECTION>
+
+          <REPORT NAME="KSBatchBalancesReport">
+            <FORM>KSBatchBalancesForm</FORM>
+          </REPORT>
+
+          <FORM NAME="KSBatchBalancesForm">
+            <PART>KSBatchBalancesPart</PART>
+          </FORM>
+
+          <PART NAME="KSBatchBalancesPart">
+            <LINE>KSBatchBalancesLine</LINE>
+            <REPEAT>KSBatchBalancesLine : KSReportStockItems</REPEAT>
+            <SCROLL>Vertical</SCROLL>
+          </PART>
+
+          <LINE NAME="KSBatchBalancesLine">
+            <FIELDS>KSBatchName, KSBatchParent, KSBatchClosingBalance, KSBatchClosingValue</FIELDS>
+            <JSONTAG>batch</JSONTAG>
+          </LINE>
+
+          <FIELD NAME="KSBatchName">
+            <USE>Name Field</USE>
+            <SETAS>$Name</SETAS>
+            <JSONTAG>batchname</JSONTAG>
+          </FIELD>
+
+          <FIELD NAME="KSBatchParent">
+            <USE>Name Field</USE>
+            <SETAS>$Parent</SETAS>
+            <JSONTAG>parent</JSONTAG>
+          </FIELD>
+
+          <FIELD NAME="KSBatchClosingBalance">
+            <USE>Name Field</USE>
+            <SETAS>$ClosingBalance</SETAS>
+            <JSONTAG>closingbalance</JSONTAG>
+          </FIELD>
+
+          <FIELD NAME="KSBatchClosingValue">
+            <USE>Amount Field</USE>
+            <SETAS>$ClosingValue</SETAS>
+            <JSONTAG>closingvalue</JSONTAG>
+          </FIELD>
+        </TDLMESSAGE>
+      </TDL>
+    </DESC>
+  </BODY>
+</ENVELOPE>
