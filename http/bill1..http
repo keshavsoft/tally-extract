@@ -19,7 +19,7 @@ Content-Type: text/xml
           
          <COLLECTION NAME="KSAllBatchBalances">
     <TYPE>Bill</TYPE>
-    <FETCH>*</FETCH>
+    <FETCH>Name</FETCH>
 </COLLECTION>
         </TDLMESSAGE>
       </TDL>
