@@ -1,4 +1,5 @@
 POST http://localhost:9000
+Content-Type: text/xml
 
 <ENVELOPE>
     <HEADER>
@@ -12,15 +13,21 @@ POST http://localhost:9000
             <STATICVARIABLES>
                 <SVEXPORTFORMAT>$$SysName:HTML</SVEXPORTFORMAT>
                 <SVCURRENTCOMPANY>mani9</SVCURRENTCOMPANY>
-                <EXPLODEFLAG>Yes</EXPLODEFLAG>
             </STATICVARIABLES>
-            <TDL>
-                <TDLMESSAGE>
-                    <REPORT NAME="Stock Summary"
-                            ISMODIFY="Yes">
-                    </REPORT>
-                </TDLMESSAGE>
-            </TDL>
+           
+<TDL>
+    <TDLMESSAGE>
+        <REPORT NAME="Stock Summary"
+                ISMODIFY="Yes"
+                ISFIXED="No"
+                ISINITIALIZE="No"
+                ISOPTION="No"
+                ISINTERNAL="No">
+            <LOCAL>Collection : Default : Add : Fetch : Name</LOCAL>
+        </REPORT>
+    </TDLMESSAGE>
+</TDL>
+
         </DESC>
     </BODY>
 </ENVELOPE>

@@ -1,0 +1,31 @@
+POST http://localhost:9000
+Content-Type: text/xml
+
+<ENVELOPE>
+  <HEADER>
+    <VERSION>1</VERSION>
+    <TALLYREQUEST>Export</TALLYREQUEST>
+    <TYPE>Collection</TYPE>
+    <ID>KSBatchBalances</ID>
+  </HEADER>
+  <BODY>
+    <DESC>
+      <STATICVARIABLES>
+        <SVEXPORTFORMAT>$$SysName:XML</SVEXPORTFORMAT>
+        <SVCURRENTCOMPANY>mani9</SVCURRENTCOMPANY>
+      </STATICVARIABLES>
+      <TDL>
+        <TDLMESSAGE>
+          <COLLECTION NAME="KSBatchBalances">
+            <TYPE>Batch</TYPE>
+            <CHILDOF>Viaadi Hooks</CHILDOF>
+            <FETCH>*</FETCH>
+            <FETCH>Name</FETCH>
+<FETCH>ClosingBalance</FETCH>
+<FETCH>ClosingValue</FETCH>
+          </COLLECTION>
+        </TDLMESSAGE>
+      </TDL>
+    </DESC>
+  </BODY>
+</ENVELOPE>
