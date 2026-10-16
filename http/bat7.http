@@ -1,0 +1,25 @@
+POST http://localhost:9000
+Content-Type: application/json
+version: 1
+tallyrequest: Export
+type: Object
+subtype: Ledger
+id: MARAN
+
+{
+    "static_variables": [
+        {
+            "name": "svExportFormat",
+            "value": "jsonex"
+        },
+       {
+  "name": "svCurrentCompany",
+  "value": "mani9"
+}
+    ],
+  "fetch_list": [
+  "Name",
+  "OpeningBalance"
+]
+}
+

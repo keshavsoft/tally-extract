@@ -1,0 +1,40 @@
+POST http://localhost:9000
+Content-Type: text/xml
+
+<ENVELOPE>
+  <HEADER>
+    <VERSION>1</VERSION>
+    <TALLYREQUEST>Export</TALLYREQUEST>
+    <TYPE>Collection</TYPE>
+    <ID>KSAllBatchBalances</ID>
+  </HEADER>
+  <BODY>
+    <DESC>
+      <STATICVARIABLES>
+        <SVEXPORTFORMAT>$$SysName:JsonEx</SVEXPORTFORMAT>
+        <SVCURRENTCOMPANY>mani9</SVCURRENTCOMPANY>
+      </STATICVARIABLES>
+      <TDL>
+        <TDLMESSAGE>
+          <COLLECTION NAME="KSAllBatchBalances">
+            <COLLECTIONS>KSBatchBalances:KSStockItems</COLLECTIONS>
+          </COLLECTION>
+
+          <COLLECTION NAME="KSStockItems">
+            <TYPE>StockItem</TYPE>
+            <FETCH>Name</FETCH>
+          </COLLECTION>
+
+         <COLLECTION NAME="KSBatchBalances">
+    <TYPE>Batch</TYPE>
+    <CHILDOF>$$LoopCollObj:$Name</CHILDOF>
+    <FETCH>Name</FETCH>
+    <FETCH>Parent</FETCH>
+    <FETCH>ClosingBalance</FETCH>
+    <FETCH>ClosingValue</FETCH>
+</COLLECTION>
+        </TDLMESSAGE>
+      </TDL>
+    </DESC>
+  </BODY>
+</ENVELOPE>
