@@ -5,7 +5,7 @@ const run = async () => {
 
     const stockSummary = await reports("tally.reports.stockSummary", inCompany);
 
-    // console.log("stockSummary : ", stockSummary);
+    console.log("stockSummary : ", stockSummary);
 };
 
 run().catch(console.error);
