@@ -11,6 +11,7 @@ const stockSummaryTemplate = ({ company = "mani9", reportId = "Stock Summary", e
             <STATICVARIABLES>
                 <SVEXPORTFORMAT>$$SysName:XML</SVEXPORTFORMAT>
                 <SVCURRENTCOMPANY>${company}</SVCURRENTCOMPANY>
+                   <ITEM>Viaadi Hooks</ITEM>
                 ${explode ? "<EXPLODEFLAG>Yes</EXPLODEFLAG>" : ""}
             </STATICVARIABLES>
         </DESC>

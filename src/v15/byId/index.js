@@ -8,6 +8,8 @@ const report = async ({
     url = "http://localhost:9000"
 } = {}) => {
     const inXml = reportTemplate({ reportId, company, explode });
+    console.log("inXml : ", inXml);
+
     return transport({ inXml, url });
 };
 

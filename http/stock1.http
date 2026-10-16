@@ -1,0 +1,38 @@
+POST http://localhost:9000
+
+<ENVELOPE>
+  <HEADER>
+    <VERSION>1</VERSION>
+    <TALLYREQUEST>Export</TALLYREQUEST>
+    <TYPE>Data</TYPE>
+    <ID>Stock Summary</ID>
+  </HEADER>
+  <BODY>
+    <DESC>
+      <STATICVARIABLES>
+        <SVEXPORTFORMAT>$$SysName:HTML</SVEXPORTFORMAT>
+        <SVCURRENTCOMPANY>mani9</SVCURRENTCOMPANY>
+        <EXPLODEFLAG>Yes</EXPLODEFLAG>
+      </STATICVARIABLES>
+      <TDL>
+        <TDLMESSAGE>
+          <REPORT NAME="Stock Summary" ISMODIFY="No">
+            <FORMS>Stock Summary Form</FORMS>
+          </REPORT>
+          <FORM NAME="Stock Summary Form">
+            <PARTS>Stock Summary Part</PARTS>
+          </FORM>
+          <PART NAME="Stock Summary Part">
+            <LINES>Stock Summary Line</LINES>
+          </PART>
+          <LINE NAME="Stock Summary Line">
+            <FIELDS>Stock Summary Field</FIELDS>
+          </LINE>
+          <FIELD NAME="Stock Summary Field">
+            <SET>Stock Summary TDL test</SET>
+          </FIELD>
+        </TDLMESSAGE>
+      </TDL>
+    </DESC>
+  </BODY>
+</ENVELOPE>

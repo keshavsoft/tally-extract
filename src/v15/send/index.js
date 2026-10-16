@@ -21,6 +21,7 @@ const startFunc = async ({ inTdlMessage, inCompany }) => {
     } else {
         localXml = localXml.replace("{{STATICVARIABLES}}", "");
     }
+    console.log("localXml : ", localXml);
 
     return await transport({
         inXml: localXml

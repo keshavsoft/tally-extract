@@ -197,7 +197,8 @@ const saveToJson = async ({ inData, inFilePath }) => {
 };
 
 const run = async () => {
-    const xml = await reports();
+    const inCompany = "mani9";
+    const xml = await reports("tally.reports.stockSummary", inCompany);
     const parsed = parser.parse(xml);
 
     const rows = normalizeStockSummary({ inOrderedXml: parsed });
