@@ -1,0 +1,25 @@
+
+### Export Stock Summary Report
+POST http://localhost:9000
+Content-Type: application/json
+version: 1
+tallyrequest: Export
+type: Data
+id: Stock Summary
+
+{
+  "static_variables": [
+    {
+      "name": "svExportFormat",
+      "value": "jsonex"
+    },
+    {
+      "name": "svCurrentCompany",
+      "value": "mani9"
+    },
+    {
+  "name": "EXPLODEFLAG",
+  "value": "Yes"
+}
+  ]
+}

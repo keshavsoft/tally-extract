@@ -1,0 +1,22 @@
+POST http://localhost:9000
+Content-Type: application/json
+version: 1
+tallyrequest: Export
+type: Collection
+id: StockItem
+
+{
+  "static_variables": [
+    {
+      "name": "svExportFormat",
+      "value": "jsonex"
+    },
+    {
+      "name": "svCurrentCompany",
+      "value": "mani9"
+    }
+  ],
+  "tdl": {
+    "tdlmessage": "<COLLECTION NAME=\"StockItem\" ISMODIFY=\"Yes\"><TYPE>StockItem</TYPE></COLLECTION>"
+  }
+}

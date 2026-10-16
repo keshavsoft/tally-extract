@@ -1,0 +1,22 @@
+POST http://localhost:9000
+Content-Type: application/json
+version: 1
+tallyrequest: Export
+type: Collection
+id: Batch
+
+{
+  "static_variables": [
+    {
+      "name": "svExportFormat",
+      "value": "jsonex"
+    },
+    {
+      "name": "svCurrentCompany",
+      "value": "mani9"
+    }
+  ],
+  "tdl": {
+    "tdlmessage": "<COLLECTION NAME=\"Batch\" ISMODIFY=\"Yes\"><TYPE>Batch</TYPE></COLLECTION>"
+  }
+}
